@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {background-color: lightcyan;}
+    h1   {color: blue;}
+    p    {color: blue;}
+    div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -200px;
+      margin-left: -150px;
+      width: 150px;
+      height: 100px;}
+      ​
+  </style>
+</head>
+
+<body>
+<% if flash[:alert] %>
+<p id = "notice"><%= flash[:alert] %> </p>
+<% end %>
+<%= form_tag do %>
+<div>
+<p><b>Login</b></p>
+<b></b><%= label_tag :name, 'Name' %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%= text_field_tag :name, params[:name] %><br>
+<br>
+<%= label_tag :password, 'Password' %>
+<%= password_field_tag :password, params[:password] %>
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%= submit_tag "Login" %>
+<% end %>
+</div>
+</body>
+</html>

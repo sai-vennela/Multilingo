@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {background-color: lightcyan;}
+    h1   {color: blue;}
+    p    {color: blue;}
+
+
+
+
+  </style>
+</head>
+<body>
+<%= form_for(user) do |f| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <div style="text-align: center">
+    <%= f.label :name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.text_field :name %><br>
+      </div>
+  </div>
+
+    <div class="field">
+      <div style="text-align: center">
+    <%= f.label :password %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.password_field :password %>
+        </div>
+  </div>
+
+    <div class="field">
+      <div style="text-align: center">
+    <%= f.label :password_confirmation %>&nbsp;&nbsp;
+    <%= f.password_field :password_confirmation %><br><br><br>
+        </div>
+  </div>
+
+  <div class="actions">
+    <div style="text-align: center">
+    <%= f.submit %>
+      </div>
+      </div>
+  </div>
+<% end %>
+</body>

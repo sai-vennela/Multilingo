@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {background-color: lightcyan;}
+    h1   {color: blue;}
+    p    {color: blue;}
+    div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -200px;
+      margin-left: -200px;
+      width: 500px;
+      height: 200px;}
+  </style>
+</head>
+
+<body>
+<div>
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<%end%>
+<p>Please <%= link_to 'Log In', sessions_new_url%> to continue to the website</p>
+</div>
+</body>
